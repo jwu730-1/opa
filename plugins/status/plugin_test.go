@@ -903,6 +903,7 @@ func TestParseConfigUseDefaultServiceNoConsole(t *testing.T) {
 	}`)
 
 	config, err := ParseConfig(loggerConfig, services, nil)
+
 	if err != nil {
 		t.Errorf("Unexpected error: %s", err)
 	}
@@ -924,6 +925,7 @@ func TestParseConfigDefaultServiceWithConsole(t *testing.T) {
 	}`)
 
 	config, err := ParseConfig(loggerConfig, services, nil)
+
 	if err != nil {
 		t.Errorf("Unexpected error: %s", err)
 	}
