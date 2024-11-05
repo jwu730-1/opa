@@ -56,6 +56,11 @@ func TestConfigValueParse(t *testing.T) {
 		},
 		{
 			note:          "no specific prometheus config, expected default config buckets",
+			input:         `{"prometheus": true}`,
+			expectedValue: defaultBundleLoadStageBuckets,
+		},
+		{
+			note:          "no specific prometheus config, expected default config buckets",
 			input:         `{"prometheus": true, "prometheus_config": {}}`,
 			expectedValue: defaultBundleLoadStageBuckets,
 		},
