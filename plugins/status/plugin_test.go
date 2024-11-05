@@ -55,22 +55,22 @@ func TestConfigValueParse(t *testing.T) {
 			expectedNoConfig: true,
 		},
 		{
-			note:          "no specific prom config, expected default config buckets",
+			note:          "no specific prometheus config, expected default config buckets",
 			input:         `{"prometheus": true, "prometheus_config": {}}`,
 			expectedValue: defaultBundleLoadStageBuckets,
 		},
 		{
-			note:          "specified prom config, expected value same as config",
+			note:          "specified prometheus config, expected value same as config",
 			input:         `{"prometheus": true, "prometheus_config": {"bundle_loading_duration_ns": {}}}`,
 			expectedValue: defaultBundleLoadStageBuckets,
 		},
 		{
-			note:          "specified prom config, expected value same as config",
+			note:          "specified prometheus config, expected value same as config",
 			input:         `{"prometheus": true, "prometheus_config": {"bundle_loading_duration_ns": {"buckets": []}}}`,
 			expectedValue: []float64{},
 		},
 		{
-			note:          "specified prom config, expected value same as config",
+			note:          "specified prometheus config, expected value same as config",
 			input:         `{"prometheus": true, "prometheus_config": {"bundle_loading_duration_ns": {"buckets":[1, 1000, 1000_000, 1e8]}}}`,
 			expectedValue: []float64{1, 1000, 1000_000, 1e8},
 		},
